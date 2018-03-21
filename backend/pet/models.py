@@ -19,7 +19,7 @@ class Pet(models.Model):
     description = models.TextField(max_length=50)
     age = models.DateField()
     is_adopted = models.BooleanField()
-    race = models.CharField(max_length=50)
+    breed = models.ForeignKey(PetBreed, on_delete=models.CASCADE)
     pelage = models.CharField(max_length=50)
 
     class Meta:
