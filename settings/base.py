@@ -25,6 +25,7 @@ INSTALLED_APPS = [
 
     # Local apps
     'backend.core.apps.DefaultApp',
+    'backend.pet'
 ]
 
 
