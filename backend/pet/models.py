@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 
 
 class PetBreed(models.Model):
@@ -21,6 +22,7 @@ class Pet(models.Model):
     )
 
     name = models.CharField(max_length=50)
+    slug = models.SlugField()
     description = models.TextField(max_length=50)
     age = models.DateField()
     is_adopted = models.BooleanField()
@@ -39,6 +41,11 @@ class Pet(models.Model):
     @property
     def type(self):
         return self._type
+
+    def save(self):
+        self.slug = slugify(self.name)
+
+        super(Pet, self).save()
 
     def __str__(self):
         return self.name
