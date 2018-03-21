@@ -36,5 +36,9 @@ class Pet(models.Model):
         verbose_name = "Pet"
         verbose_name_plural = "Pets"
 
+    @property
+    def type(self):
+        return self._type
+
     def __str__(self):
         return self.name
