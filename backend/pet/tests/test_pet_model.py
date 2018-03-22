@@ -24,11 +24,10 @@ class PetTestModel(TestCase):
         self.assertEquals(self.pet.slug, 'abigodal')
 
     def test_pet_breed_foreign_attr(self):
-        self.assertIsInstance(self.pet.breed, PetBreed)
-
         self.pet.breed.name = 'Bulldog'
         self.pet.breed.save()
 
+        self.assertIsInstance(self.pet.breed, PetBreed)
         self.assertEquals(str(self.pet.breed), 'Bulldog')
 
     def test_pet_related_name(self):
