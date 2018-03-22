@@ -30,3 +30,11 @@ class PetTestModel(TestCase):
         self.pet.breed.save()
 
         self.assertEquals(str(self.pet.breed), 'Bulldog')
+
+    def test_pet_related_name(self):
+        pet_breed = mommy.make(PetBreed)
+
+        self.pet.breed = pet_breed
+        self.pet.save()
+
+        self.assertEquals(str(self.pet), str(pet_breed.pets.get()))

@@ -27,7 +27,12 @@ class Pet(models.Model):
     age = models.DateField()
     is_adopted = models.BooleanField()
     is_castrated = models.BooleanField()
-    breed = models.ForeignKey(PetBreed, on_delete=models.CASCADE)
+    breed = models.ForeignKey(
+        PetBreed,
+        related_name='pets',
+        related_query_name='pet',
+        on_delete=models.CASCADE
+    )
     pelage = models.CharField(max_length=50)
     _type = models.CharField(
         max_length=10,
