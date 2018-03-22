@@ -64,7 +64,7 @@ class Pet(models.Model):
         return self._type
 
     def get_absolute_url(self):
-        return r('pet:detail', kwargs={ 'slug': self.slug})
+        return r('pet:detail', kwargs={'slug': self.slug})
 
     def save(self):
         self.slug = slugify(self.name)
