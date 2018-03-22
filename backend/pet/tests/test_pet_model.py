@@ -43,3 +43,11 @@ class PetTestModel(TestCase):
 
         self.assertIsInstance(self.pet.pelage, PetPelage)
         self.assertEquals(str(self.pet.pelage), 'Short Hair')
+
+    def test_get_absolute_url_method(self):
+        self.pet.name = 'Abigodal'
+        self.pet.save()
+
+        absolute_url = self.pet.get_absolute_url()
+
+        self.assertEquals(absolute_url, '/pets/abigodal/detail/')

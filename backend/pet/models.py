@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.text import slugify
+from django.urls import reverse as r
 
 
 class PetBreed(models.Model):
@@ -61,6 +62,9 @@ class Pet(models.Model):
     @property
     def type(self):
         return self._type
+
+    def get_absolute_url(self):
+        return r('pet:detail', kwargs={ 'slug': self.slug})
 
     def save(self):
         self.slug = slugify(self.name)
