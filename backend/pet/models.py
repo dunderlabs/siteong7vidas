@@ -48,7 +48,7 @@ class Pet(models.Model):
 
     name = models.CharField(max_length=50)
     slug = models.SlugField()
-    description = models.TextField(max_length=50)
+    description = models.TextField(max_length=250)
     age = models.IntegerField()
     is_adopted = models.BooleanField()
     is_castrated = models.BooleanField()
