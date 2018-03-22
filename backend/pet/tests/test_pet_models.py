@@ -66,3 +66,18 @@ class PetBreedTestModel(TestCase):
         self.pet_breed.save()
 
         self.assertEquals(self.pet_breed.slug, 'shih-tzu')
+
+
+class PetPelageTestModel(TestCase):
+
+    def setUp(self):
+        self.pet_pelage = mommy.make(PetPelage)
+
+    def test_string_representation(self):
+        self.assertIsInstance(str(self.pet_pelage), str)
+
+    def test_pet_pelage_slug(self):
+        self.pet_pelage.name = 'Low Hair'
+        self.pet_pelage.save()
+
+        self.assertEquals(self.pet_pelage.slug, 'low-hair')

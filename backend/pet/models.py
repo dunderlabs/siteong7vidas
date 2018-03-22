@@ -24,10 +24,16 @@ class PetBreed(models.Model):
 class PetPelage(models.Model):
 
     name = models.CharField(max_length=50)
+    slug = models.SlugField()
 
     class Meta:
         verbose_name = "Pelage"
         verbose_name_plural = "Pelages"
+
+    def save(self):
+        self.slug = slugify(self.name)
+
+        super(PetPelage, self).save()
 
     def __str__(self):
         return self.name
