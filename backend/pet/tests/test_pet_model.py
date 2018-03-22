@@ -1,7 +1,7 @@
 from django.test import TestCase
 from model_mommy import mommy
 from model_mommy.recipe import Recipe, foreign_key
-from backend.pet.models import Pet
+from backend.pet.models import Pet, PetBreed
 
 
 class PetTestModel(TestCase):
@@ -22,3 +22,11 @@ class PetTestModel(TestCase):
         self.pet.save()
 
         self.assertEquals(self.pet.slug, 'abigodal')
+
+    def test_pet_breed_foreign_attr(self):
+        self.assertIsInstance(self.pet.breed, PetBreed)
+
+        self.pet.breed.name = 'Bulldog'
+        self.pet.breed.save()
+
+        self.assertEquals(str(self.pet.breed), 'Bulldog')
