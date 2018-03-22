@@ -1,3 +1,8 @@
 from django.shortcuts import render
+from django.views.generic.detail import DetailView
+from .models import Pet
 
-# Create your views here.
+
+class PetDetailView(DetailView):
+
+    model = Pet
