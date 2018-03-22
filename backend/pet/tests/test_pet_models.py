@@ -51,3 +51,18 @@ class PetTestModel(TestCase):
         absolute_url = self.pet.get_absolute_url()
 
         self.assertEquals(absolute_url, '/pets/abigodal/detail/')
+
+
+class PetBreedTestModel(TestCase):
+
+    def setUp(self):
+        self.pet_breed = mommy.make(PetBreed)
+
+    def test_string_representation(self):
+        self.assertIsInstance(str(self.pet_breed), str)
+
+    def test_pet_breed_slug(self):
+        self.pet_breed.name = 'Shih Tzu'
+        self.pet_breed.save()
+
+        self.assertEquals(self.pet_breed.slug, 'shih-tzu')

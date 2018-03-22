@@ -6,10 +6,16 @@ from django.urls import reverse as r
 class PetBreed(models.Model):
 
     name = models.CharField(max_length=50)
+    slug = models.SlugField()
 
     class Meta:
         verbose_name = "PetBreed"
         verbose_name_plural = "PetsBreed"
+
+    def save(self):
+        self.slug = slugify(self.name)
+
+        super(PetBreed, self).save()
 
     def __str__(self):
         return self.name
