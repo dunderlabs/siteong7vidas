@@ -39,8 +39,8 @@ class PetTestModel(TestCase):
         self.assertEquals(str(self.pet), str(pet_breed.pets.get()))
 
     def test_pelage_foreign_attr(self):
-        self.pet.pelage.name = 'Bulldog'
+        self.pet.pelage.name = 'Short Hair'
         self.pet.pelage.save()
 
         self.assertIsInstance(self.pet.pelage, PetPelage)
-        self.assertEquals(str(self.pet.pelage), 'Bulldog')
+        self.assertEquals(str(self.pet.pelage), 'Short Hair')
