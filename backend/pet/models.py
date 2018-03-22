@@ -14,6 +14,18 @@ class PetBreed(models.Model):
         return self.name
 
 
+class PetPelage(models.Model):
+
+    name = models.CharField(max_length=50)
+
+    class Meta:
+        verbose_name = "Pelage"
+        verbose_name_plural = "Pelages"
+
+    def __str__(self):
+        return self.name
+
+
 class Pet(models.Model):
 
     PET_TYPE_CHOICES = (
@@ -33,7 +45,10 @@ class Pet(models.Model):
         related_query_name='pet',
         on_delete=models.CASCADE
     )
-    pelage = models.CharField(max_length=50)
+    pelage = models.ForeignKey(
+        PetPelage,
+        on_delete=models.CASCADE
+    )
     _type = models.CharField(
         max_length=10,
         choices=PET_TYPE_CHOICES
