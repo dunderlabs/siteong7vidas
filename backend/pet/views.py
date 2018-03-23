@@ -5,3 +5,4 @@ from .models import Pet
 class PetDetailView(DetailView):
 
     model = Pet
+    template_name = 'pet/detail.html'
