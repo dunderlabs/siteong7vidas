@@ -1,6 +1,5 @@
 from django.test import TestCase
 from django.conf import settings
-from django.core.files.images import ImageFile
 from model_mommy import mommy
 from backend.pet.models import Pet, PetBreed, PetPelage
 
