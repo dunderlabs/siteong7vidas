@@ -1,4 +1,6 @@
 from django.test import TestCase
+from django.conf import settings
+from django.core.files.images import ImageFile
 from model_mommy import mommy
 from backend.pet.models import Pet, PetBreed, PetPelage
 
@@ -51,6 +53,10 @@ class PetTestModel(TestCase):
         absolute_url = self.pet.get_absolute_url()
 
         self.assertEquals(absolute_url, '/pets/abigodal/detail/')
+
+    def test_pet_image_default(self):
+        default_img_path = settings.MEDIA_URL + "uploads/images/default.png"
+        self.assertEquals(self.pet.image.url, default_img_path)
 
 
 class PetBreedTestModel(TestCase):

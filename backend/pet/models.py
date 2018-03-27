@@ -52,6 +52,11 @@ class Pet(models.Model):
     age = models.IntegerField()
     is_adopted = models.BooleanField()
     is_castrated = models.BooleanField()
+    image = models.ImageField(
+        upload_to='uploads/images',
+        default='uploads/images/default.png',
+        blank=True
+    )
     breed = models.ForeignKey(
         PetBreed,
         related_name='pets',
