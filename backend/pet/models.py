@@ -53,8 +53,8 @@ class Pet(models.Model):
     is_adopted = models.BooleanField()
     is_castrated = models.BooleanField()
     image = models.ImageField(
-        upload_to='uploads/images',
-        default='uploads/images/default.png',
+        upload_to='images/uploads',
+        default='images/uploads/default.png',
         blank=True
     )
     breed = models.ForeignKey(

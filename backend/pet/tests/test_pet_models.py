@@ -54,7 +54,7 @@ class PetTestModel(TestCase):
         self.assertEquals(absolute_url, '/pets/abigodal/detail/')
 
     def test_pet_image_default(self):
-        default_img_path = settings.MEDIA_URL + "uploads/images/default.png"
+        default_img_path = settings.MEDIA_URL + "images/uploads/default.png"
         self.assertEquals(self.pet.image.url, default_img_path)
 
 
