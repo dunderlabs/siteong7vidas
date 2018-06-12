@@ -83,10 +83,10 @@ class Pet(models.Model):
     def get_absolute_url(self):
         return r('pet:detail', kwargs={'slug': self.slug})
 
-    def save(self):
+    def save(self, *args, **kwargs):
         self.slug = slugify(self.name)
 
-        super(Pet, self).save()
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.name
