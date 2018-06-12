@@ -50,8 +50,8 @@ class Pet(models.Model):
     slug = models.SlugField()
     description = models.TextField(max_length=250)
     age = models.IntegerField()
-    is_adopted = models.BooleanField()
-    is_castrated = models.BooleanField()
+    is_adopted = models.BooleanField(default=False)
+    is_castrated = models.BooleanField(default=False)
     image = models.ImageField(
         upload_to='images/uploads',
         default='images/uploads/default.png',
