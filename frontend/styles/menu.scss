@@ -1,6 +1,10 @@
 .navbar {
     background: #F1AC48;
     font-weight: bold;
+
+    .navbar-toggler {
+        margin-left: 6rem;
+    }
 }
 
 .navbar-nav {
