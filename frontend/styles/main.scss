@@ -24,24 +24,40 @@ body {
 
 }
 
-.worked {
-    padding-top: 10em;
+.arrow {
+    position: absolute;
+    right: 20rem;
+    top: 20rem;
+    width: 9rem;
+}
 
-    hr {
-        display: block;
-        height: 2px;
-        border: 0;
-        border-top: 1px solid #2b7156;
-        margin: 2em 0;
-        padding: 0;
+
+.text {
+    position: relative;
+    top: 5rem;
+    left: 20rem;
+    width: 50%;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+
+    span {
+        &:nth-child(3) {
+            color: #f24848;
+        }
     }
+}
 
-    li {
-        text-decoration: none;
-    }
+.buttons {
+    position: relative;
+    bottom: 2rem;
 
-    a{
-        text-decoration: none;
-        color: white;
+    .btn-lg {
+        padding: 0.5rem 2rem 0.5rem 2rem;
+        font-size: 2rem;
+        line-height: 1.5;
+        border-radius: 0.3rem;
+        margin-left: 3rem;
+        font-weight: bold;
     }
 }
