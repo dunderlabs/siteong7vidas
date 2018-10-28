@@ -15,11 +15,12 @@ body {
     width: 9rem;
 
     @include media-breakpoint-down(sm) {
-        position: relative;
-        width: 2rem;
-        right: unset;
-        transform: rotate(-40deg);
-        top: 1rem;
+        display: none;
+        //position: relative;
+        //width: 2rem;
+        //right: unset;
+        //transform: rotate(-40deg);
+        //top: 1rem;
     }
 }
 
@@ -48,6 +49,7 @@ body {
     @include media-breakpoint-down(sm) {
         left: unset;
         top: unset;
+        width: 100%;
     }
 }
 
