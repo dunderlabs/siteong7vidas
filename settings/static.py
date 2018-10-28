@@ -29,7 +29,7 @@ STATICFILES_FINDERS = [
 _bower = BASE_DIR.child('frontend', 'bower_components')
 
 _sass_includes = ' '.join(
-    ['--include-path={}'.format(_bower.child('susy', 'sass')), ]
+    ['--include-path={}'.format(_bower.child('bootstrap', 'scss')), ]
 )
 
 COMPRESS_PRECOMPILERS = [

@@ -1,26 +1,10 @@
-@import 'susy';
+@import 'bootstrap';
 @import 'menu';
-
-
-$susy: (
-    columns: 12,
-    container: 1168px,
-    global-box-sizing: border-box,
-    gutter-position: split,
-    gutters: 0.25,
-);
 
 
 body {
     background: #F1AC48;
     color: white;
-
-    & > * {
-        @include container;
-    }
-    main > section {
-        @include span(full);
-    }
 
 }
 
@@ -29,6 +13,12 @@ body {
     right: 20rem;
     top: 20rem;
     width: 9rem;
+}
+
+#cat-and-dog-img {
+    @include media-breakpoint-down(sm) {
+        width: 20rem;
+    }
 }
 
 
