@@ -1,4 +1,5 @@
 @import 'susy';
+@import 'menu';
 
 
 $susy: (
@@ -11,7 +12,7 @@ $susy: (
 
 
 body {
-    background: #44B78B;
+    background: #E7AC38;
     color: white;
 
     & > * {
