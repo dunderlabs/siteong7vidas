@@ -13,6 +13,14 @@ body {
     right: 20rem;
     top: 20rem;
     width: 9rem;
+
+    @include media-breakpoint-down(sm) {
+        position: relative;
+        width: 2rem;
+        right: unset;
+        transform: rotate(-40deg);
+        top: 1rem;
+    }
 }
 
 #cat-and-dog-img {
@@ -35,6 +43,11 @@ body {
         &:nth-child(3) {
             color: #f24848;
         }
+    }
+
+    @include media-breakpoint-down(sm) {
+        left: unset;
+        top: unset;
     }
 }
 
