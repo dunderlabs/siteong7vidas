@@ -11,20 +11,27 @@
     .nav-link {
         text-decoration: none;
         color: white;
-        .fa {
-            padding: 20px;
-            font-size: 30px;
-            width: 30px;
-            font-size: 15px;
-            text-align: center;
-            text-decoration: none;
-            border-radius: 50%;
-        }
     }
     .active {
         a {
             border-bottom: 3px solid;
             border-color: #2c2c2c;
+        }
+    }
+}
+
+.nav-item {
+    .fa {
+        color:#F1AC48!important;
+        font-size: 12px;
+        font-size: 1.5rem;
+        margin: 1rem;
+        background: white;
+        padding: 0.3rem 3rem 0.3rem 3rem;
+        border-radius: 100%;
+
+        @include media-breakpoint-down(sm) {
+            padding: 0.7rem 1rem 0.7rem 1rem;
         }
     }
 }
