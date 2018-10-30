@@ -16,11 +16,6 @@ body {
 
     @include media-breakpoint-down(sm) {
         display: none;
-        //position: relative;
-        //width: 2rem;
-        //right: unset;
-        //transform: rotate(-40deg);
-        //top: 1rem;
     }
 }
 
