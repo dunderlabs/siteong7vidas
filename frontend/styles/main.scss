@@ -1,46 +1,87 @@
-@import 'susy';
-
-
-$susy: (
-    columns: 12,
-    container: 1168px,
-    global-box-sizing: border-box,
-    gutter-position: split,
-    gutters: 0.25,
-);
+@import 'bootstrap';
+@import 'menu';
 
 
 body {
-    background: #44B78B;
+    background: #F1AC48;
     color: white;
-
-    & > * {
-        @include container;
-    }
-    main > section {
-        @include span(full);
-    }
 
 }
 
-.worked {
-    padding-top: 10em;
+.arrow {
+    position: absolute;
+    right: 20rem;
+    top: 20rem;
+    width: 9rem;
 
-    hr {
-        display: block;
-        height: 2px;
-        border: 0;
-        border-top: 1px solid #2b7156;
-        margin: 2em 0;
-        padding: 0;
+    @include media-breakpoint-down(sm) {
+        display: none;
+    }
+}
+
+#cat-and-dog-img {
+    @include media-breakpoint-down(sm) {
+        width: 20rem;
+    }
+}
+
+
+.text {
+    position: relative;
+    top: 5rem;
+    left: 20rem;
+    width: 50%;
+    font-size: 3rem;
+    line-height: 3rem;
+    font-weight: bold;
+
+    span {
+        &:nth-child(3) {
+            color: #f24848;
+        }
     }
 
-    li {
-        text-decoration: none;
+    @include media-breakpoint-down(sm) {
+        left: unset;
+        top: unset;
+        width: 100%;
+    }
+}
+
+.buttons {
+    position: relative;
+    bottom: 2rem;
+
+    .btn {
+        padding: 1rem 3rem 1rem 3rem;
+        font-size: 1.5rem;
+        margin-right: 2rem;
+        margin-left: 2rem;
+        font-weight: bold;
     }
 
-    a{
-        text-decoration: none;
-        color: white;
+    @include media-breakpoint-down(sm) {
+        .buttons {
+            position: unset;
+        }
+
+        .btn-info {
+            margin-right: 3rem;
+        }
+
+        .btn {
+            padding: 1rem 1rem 1rem 1rem;
+            font-size: 1rem;
+            margin-right: 1rem;
+            margin-left: 1rem;
+            font-weight: bold;
+        }
     }
+}
+
+.footer {
+    font-size: 10px;
+    background: red;
+    text-align: center;
+    background: #624119;
 }

@@ -8,15 +8,22 @@
 	<title>
 		{% block title %}{% endblock title %}
 	</title>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	{% compress css %}
-		<link rel="stylesheet" type="text/css" href="{% static 'semantic/dist/semantic.css' %}">
+		<link rel="stylesheet" type="text/css" href="{% static 'bootstrap/dist/css/bootstrap.css' %}">
 		<link rel="stylesheet" type="text/x-scss" href="{% static 'styles/main.scss' %}">
 	{% endcompress %}
 </head>
 <body>
+	{% include "menu.html" %}
 	<main id="{{ view.title|slugify }}">
 		{% block content %}{% endblock content %}
 	</main>
+	{% include "footer.html" %}
 </body>
+	{% compress js %}
+		<script src="{% static 'jquery/dist/jquery.js' %}"></script>
+		<script src="{% static 'bootstrap/dist/js/bootstrap.js' %}"></script>
+	{% endcompress %}
 </html>

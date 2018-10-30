@@ -2,23 +2,27 @@
 {% load static %}
 
 {% block title %}
-	It's worked!
+	Ong 7 vidas
 {% endblock title %}
 
 
 {% block content %}
-	<center class='worked'>
-		<span>
-			<h1>Django Boilerplate is working !</h1>
-		</span>
-		<hr>
-		<a href="https://github.com/dunderlabs">
-			<img src="{% static '/images/GitHub-Mark-Light-32px.png' %}">
-				<p>
-					See us on github.
-				</p>
-			</img>
-		</a>
-		
+	<center class='mt-4 mb-5'>
+		<div class="text">
+			<span>
+				Todo amor é
+			</span>
+			<br>
+			<span>
+				Bem-vindo
+			</span>
+		</div>
+		<img src="{% static '/images/seta.png' %}" class="arrow">
+		<img src="{% static '/images/cat and dog.png' %}" id="cat-and-dog-img">
+
+		<div class="buttons">
+			<a href="#" class="btn btn-info">Doar</a>
+			<a href="#" class="btn btn-danger">Adotar</a>
+		</div>
 	</center>
 {% endblock content %}
